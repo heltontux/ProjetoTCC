@@ -17,9 +17,24 @@
 
 	<div class ="container">
 		<h2> Listagem de Alunos: ${alunos.size()}</h2>
-		 <c:forEach var="aluno" items="${alunos}">
-			<h3> ${aluno}</h3>
-		</c:forEach>
+			
+		
+			 <table class="table">
+			    <thead>
+			      <tr>
+			        <th>Firstname</th>
+			        <th>Turma</th>
+			        <th>Curso</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			    	<c:forEach var="aluno" items="${alunos}">
+				      <tr>
+				        <td>${aluno}</td>
+				      </tr>
+			      </c:forEach>
+			    </tbody>
+		  	</table>	
 	</div>
 
 </body>
