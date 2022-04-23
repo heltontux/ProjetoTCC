@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +15,12 @@
 
 	<c:import url = "/WEB-INF/jsp/menu.jsp"/>
 
-<div class ="container">
-	<h2> Listagem de Alunos: ${alunos.size()}</h2>
-	<h3>* ${alunos} *</h3>
-</div>
+	<div class ="container">
+		<h2> Listagem de Alunos: ${alunos.size()}</h2>
+		 <c:forEach var="aluno" items="${alunos}">
+			<h3> ${aluno}</h3>
+		</c:forEach>
+	</div>
 
 </body>
 </html>
