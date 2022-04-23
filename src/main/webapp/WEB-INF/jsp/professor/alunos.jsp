@@ -16,21 +16,23 @@
 	<c:import url = "/WEB-INF/jsp/menu.jsp"/>
 
 	<div class ="container">
+		<h3><a href=""> Incluir novo aluno</a></h3>
 		<h2> Listagem de Alunos: ${alunos.size()}</h2>
-			
 		
 			 <table class="table">
 			    <thead>
 			      <tr>
-			        <th>Firstname</th>
-			        <th>Turma</th>
-			        <th>Curso</th>
+			        <th>Nome</th>
+			        <th>#</th>
+			        <th>#</th>
 			      </tr>
 			    </thead>
 			    <tbody>
 			    	<c:forEach var="aluno" items="${alunos}">
 				      <tr>
 				        <td>${aluno}</td>
+				        <td><a href="">Excluir</a></td>
+				        <td><a href="">Detalhar</a></td>
 				      </tr>
 			      </c:forEach>
 			    </tbody>
