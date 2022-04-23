@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,19 +13,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Gerenciamento de Alunos</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home</a></li>
-      <li><a href="#">Coordenação</a></li>
-      <li><a href="#">Aluno</a></li>
-      <li><a href="/professor/inicio">Professor</a></li>
-    </ul>
-  </div>
-</nav>
+	<c:import url = "/WEB-INF/jsp/menu.jsp"/>
 
 <div class="jumbotron text-center">
   <h1>Projeto TCC Cederj 2022</h1>
