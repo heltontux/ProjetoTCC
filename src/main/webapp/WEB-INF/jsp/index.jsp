@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Meu Projeto TCC</title>
+  <title>Projeto TCC CEDERJ</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -16,26 +16,24 @@
 	<c:import url = "/WEB-INF/jsp/menu.jsp"/>
 
 <div class="jumbotron text-center">
-  <h1>Projeto TCC Cederj 2022</h1>
-  <p>Resize this responsive page to see the effect!</p> 
+  <h1>Gerenciador de alunos e aulas online</h1>
+  <p>Este sistema permite a efetivação de aulas online e acompanhamento de alunos. Escolha um perfil e comece a usar:</p>
+  <BUTTON onclick="window.location.href='login'">ENTRAR</BUTTON>  
 </div>
-  
+
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    <h3>Aluno</h3>
+      <p>Se você é aluno, pode fazer um curso que já esteja cadastrado. Caso não seja cadastrado entre em contato com o cordenador</p>
     </div>
     <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <h3>Professor</h3>
+      <p>Acompanhe seus alunos, exponha conteúdo e aplique teste </p>
     </div>
     <div class="col-sm-4">
-      <h3>Column 3</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <h3>Cordenador</h3>       
+      <p>Cadastre professores, cursos, alunos e visualize status do cursos.</p>
     </div>
   </div>
 </div>

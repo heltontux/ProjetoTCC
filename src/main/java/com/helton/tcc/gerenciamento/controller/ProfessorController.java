@@ -10,12 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ProfessorController {
 	
-	
-	@GetMapping(value = "/")
-	public String inicializa() {
-		return "index";
-	}
-	
 	@GetMapping(value = "/professor/inicio")
 	public String listaTurma() {
 		return "professor/inicio";
