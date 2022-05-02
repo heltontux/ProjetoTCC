@@ -15,5 +15,10 @@ public class AppController {
 	public String login() {
 		return "login";
 	}
+	
+	@GetMapping(value = "/loginaction")
+	public String loginaction() {
+		return "loginaction";
+	}
 
 }

@@ -1,13 +1,13 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Gerenciamento de Alunos</a>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>     
+  <!-- <li><a href="#">About</a></li>  -->          
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home</a></li>
-      <li><a href="#">Coordenação</a></li>
-      <li><a href="#">Aluno</a></li>
-      <li><a href="/professor/inicio">Professor</a></li>
-    </ul>
   </div>
 </nav>

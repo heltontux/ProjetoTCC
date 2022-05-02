@@ -12,7 +12,7 @@ public class ProfessorController {
 	
 	@GetMapping(value = "/professor/inicio")
 	public String listaTurma() {
-		return "professor/inicio";
+		return "professor/telainicial";
 	}
 	
 	@GetMapping(value = "/professor/obterAlunos")
@@ -21,7 +21,7 @@ public class ProfessorController {
 		List<String> colecaoAlunos = new ArrayList<String>();
 		colecaoAlunos.add("Maria");
 		colecaoAlunos.add("Fabio");
-		colecaoAlunos.add("Henrique");
+		colecaoAlunos.add("Paulo Henrique");
 		colecaoAlunos.add("Ana Paula");
 		
 		model.addAttribute("alunos", colecaoAlunos);
