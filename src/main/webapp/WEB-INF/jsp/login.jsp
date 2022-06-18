@@ -15,15 +15,16 @@
 
 		<c:import url = "/WEB-INF/jsp/menu.jsp"/>
 
-<div class="container">
-	  <h2>Login</h2>
-	  
-	  <form action="/loginaction">
-	    <div class="form-group">
-	      <label for="matricula">Matricula:</label>
-	      <input type="matricula" class="form-control" id="matricula" placeholder="Insira a matricula" name="matricula">
+	<div class="login">	  
+	  <form action="/" class="formulario">
+	  	<div class="form-cabecalho">
+	  		<h2>Login</h2>
+	  	</div>
+	    <div class="form-conteudo">
+	      <label for="usuario">Usuário:</label>
+	      <input type="usuario" class="form-control" id="usuario" placeholder="Insira o usuário" name="usuario">
 	    </div>
-	    <div class="form-group">
+	    <div class="form-conteudo">
 	      <label for="pwd">Senha:</label>
 	      <input type="password" class="form-control" id="pwd" placeholder="Insira a senha" name="pwd">
 	    </div>
@@ -31,15 +32,8 @@
 	      <label><input type="checkbox" name="remember"> Lembrar meu login</label>
 	    </div>
 	    <button type="submit" class="btn btn-default">Enviar</button>
+	    <button type="submit" class="btn btn-default">Voltar</button>
 	   </form>
-	    
-	    <form action = "/">
-	    	<div>
-	    		<button type="submit" class="btn btn-default">Voltar</button>
-	    	</div>
-	    </form>
-
-
 	  	 
 </div>
 

@@ -3,8 +3,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- 
-  <!--=======================================-->
+  
+  <!--======================================= -->
     <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
@@ -29,6 +29,31 @@
       padding: 15px;
     }
     
+    .login {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	}
+
+	.formulario {
+    background-color: rgba(19, 19, 19, 0.3);
+    padding: 40px;
+    border-radius: 2px;
+    width:280px;
+	}
+    
+    body {
+	padding: 0;
+	margin: 0;
+	background-color: #B0C4DE;
+	}
+	
+	.form-conteudo, .form-cabecalho {
+	color: #fff;
+	}
+	
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 767px) {
       .sidenav {
