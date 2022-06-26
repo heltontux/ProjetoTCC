@@ -11,11 +11,11 @@
         <title>Pesquisar Aluno</title>
     </head>
     <body>
-    	<c:import  url="/WEB-INF/jsp/cabecalho-coordenador.jsp"></c:import>
-    	<c:import  url="/WEB-INF/jsp/menu-coordenador.jsp"></c:import>
+    	<c:import  url="/WEB-INF/jsp/coordenador/cabecalho-coordenador.jsp"></c:import>
+    	<c:import  url="/WEB-INF/jsp/coordenador/menu-coordenador.jsp"></c:import>
 		<c:import  url="/WEB-INF/jsp/cabecalho-comum.jsp"></c:import>
 		<div class="homework">
-			<h2>Pesquisar</h2>
+			<h2>Pesquisar Aluno</h2>
 			Insira o nome, matrícula ou CPF<p>
 			<input type="text" id="pesquisa" name="pesquisa">
 			<input type="submit" value="Buscar">

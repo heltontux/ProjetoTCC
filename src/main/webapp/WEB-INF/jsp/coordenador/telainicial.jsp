@@ -14,10 +14,10 @@
     
     </head>
     <body>
-    	<c:import  url="/WEB-INF/jsp/cabecalho-coordenador.jsp"></c:import>
+    	<c:import  url="/WEB-INF/jsp/coordenador/cabecalho-coordenador.jsp"></c:import>
     		
 		<div id="bloco">	
-			<c:import  url="/WEB-INF/jsp/menu-coordenador.jsp"></c:import>
+			<c:import  url="/WEB-INF/jsp/coordenador/menu-coordenador.jsp"></c:import>
 			<c:import  url="/WEB-INF/jsp/cabecalho-comum.jsp"></c:import>
 			
 			<!-- 
