@@ -9,12 +9,23 @@
 	<groupId>com.helton.tcc</groupId>
 	<artifactId>gerenciamento</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	<!-- Adicionando packging para trocar jar por war-->
+	<packaging>war</packaging>
 	<name>gerenciamento</name>
 	<description>Projeto TCC Cederj 2022</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+	
+	<!-- Adicionando dependencia do tomcat externo na compilação-->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-tomcat</artifactId>
+		<scope>provided</scope>
+		
+	</dependency>
 	
 		<dependency>
     		<groupId>taglibs</groupId>
