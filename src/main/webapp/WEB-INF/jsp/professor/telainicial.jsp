@@ -1,44 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Meu Projeto TCC</title>
-
-	<c:import url="/WEB-INF/jsp/estilo.jsp"></c:import>
-
-</head>
-<body>
-	<c:import url = "/WEB-INF/jsp/menu.jsp"/>
-	<div class="container-fluid text-center">    
-	  	<div class="row content">
-		    <div class="col-sm-2 sidenav">
-		      <p><a href="#">Link</a></p>
-		      <p><a href="#">Link</a></p>
-		      <p><a href="#">Link</a></p>
-		    </div>
-		    <div class="col-sm-8 text-left"> 
-		      <h1>Bem vindo ###</h1>
-		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-		      <hr>
-		      <h3>Test</h3>
-		      <p>Lorem ipsum...</p>
-		    </div>
-		    <div class="col-sm-2 sidenav">
-			      <div class="well">
-			        <p>ADS</p>
-			      </div>
-			      	<div class="well">
-		        		<p>ADS</p>
-		      		</div>
-	    	</div>
-	  	</div>
-	</div>
-
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
-
-</body>
+<html lang="pt-br">
+    <head>
+    
+    <c:import url="/WEB-INF/jsp/meuestilo.jsp"></c:import>
+    
+     <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sistema de Ensino Online</title> 
+    
+    </head>
+    <body>
+    	<c:import  url="/WEB-INF/jsp/professor/cabecalho-professor.jsp"></c:import>
+    		
+		<div id="bloco">	
+			<c:import  url="/WEB-INF/jsp/professor/menu-professor.jsp"></c:import>
+			<c:import  url="/WEB-INF/jsp/cabecalho-comum.jsp"></c:import>
+		<div class="homework">
+			<h2>Bem vindo, Professor!</h2>
+		</div>
+		</div>
+    </body>
 </html>
+

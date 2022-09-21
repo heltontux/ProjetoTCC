@@ -12,9 +12,21 @@ button {
 	border:3px;
 	border-style: groove;
 	width: 120px;
-	font-size: 15px
+	font-size: 15px;
+	}
+	
+	button:hover {
+  	color: hotpink;
 	}
 
+	table, td {
+	border: 1px solid;
+	}
+	
+	table {
+	whidth: 100%;
+	}
+	
 /* unvisited link */
 a:link {
   color: white;
@@ -55,6 +67,11 @@ a:active {
 	text-align: center;
 	padding: 15px;
 	height:700px;
+	}
+	
+.conteudo-lista-aluno {
+  	margin-left: auto;
+  	margin-right: auto;
 	}
 	
 </style>

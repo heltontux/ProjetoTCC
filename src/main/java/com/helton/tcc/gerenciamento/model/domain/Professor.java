@@ -2,32 +2,48 @@ package com.helton.tcc.gerenciamento.model.domain;
 
 public class Professor {
 	
+	private int idProfessor;
 	private String nome;
-	private int idade;
-	private float salario;
+	private String cpf;
+	private String email;
+	private int senha;
 	
+	public int getIdProfessor() {
+		return idProfessor;
+	}
+	public void setIdProfessor(int idProfessor) {
+		this.idProfessor = idProfessor;
+	}
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getIdade() {
-		return idade;
+	public String getCpf() {
+		return cpf;
 	}
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
-	public float getSalario() {
-		return salario;
+	public String getEmail() {
+		return email;
 	}
-	public void setSalario(float salario) {
-		this.salario = salario;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	
+	public int getSenha() {
+		return senha;
+	}
+	public void setSenha(int senha) {
+		this.senha = senha;
+	}
 	@Override
 	public String toString() {
-		return "Sou professor " +nome+ " e tenho " +idade+ " anos";
+		return "Professor [idProfessor=" + idProfessor + ", nome=" + nome + ", cpf=" + cpf + ", email=" + email
+				+ ", senha=" + senha + "]";
 	}
+	
+	
 
 }

@@ -4,16 +4,16 @@ import java.util.List;
 
 import com.helton.tcc.gerenciamento.controller.AlunoController;
 import com.helton.tcc.gerenciamento.model.domain.Aluno;
-import com.mysql.cj.protocol.Resultset;
+//import com.mysql.cj.protocol.Resultset;
 
 public class AlunoTeste {
 	
 	public static void main(String[] args) {
-		
+		/*
 		AlunoController act = new AlunoController();
 		
 		Aluno aluno = new Aluno();
-		/*
+		
 		aluno.setNome("Adrino Passos de Feitas");
 		aluno.setEmail("adriano@uol.com.br");
 		aluno.setCpf("123.456.789-30");
@@ -41,12 +41,12 @@ public class AlunoTeste {
 		System.out.println("Atualizou os dados no banco!");
 	
 		act.removeById(4);
-		System.out.println("Removeu do banco!"); */
+		System.out.println("Removeu do banco!"); 
 		
 		aluno = act.buscaAluno(3);
 		System.out.println(aluno);
 		
-		//act.removeById(4);
+		act.removeById(4); */
 	
 		
 		
