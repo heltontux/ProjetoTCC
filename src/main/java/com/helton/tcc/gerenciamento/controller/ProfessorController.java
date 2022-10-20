@@ -42,7 +42,9 @@ public class ProfessorController {
 	
 	
 	@GetMapping(value = "/professor/cadastrar-conteudo")
-	public String cadastraConteudo() {
+	public String cadastraConteudo(Model modelCurso) {
+		CursoController cursoCtrl = new CursoController();
+		modelCurso.addAttribute("cursos", cursoCtrl.obterTodos());
 		return "professor/cadastrar-conteudo";
 	}
 	

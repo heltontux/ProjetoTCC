@@ -9,6 +9,8 @@
 				<form action="listagem-curso">
 					<button type="submit">Cursos</button><p>
 					<ul>
+						<li><a href="/professor/cadastrar-conteudo">Cadastrar Conteúdo de Aula</a></li>
+						<li><a href="#41">Cadastrar material de apoio</a></li>
 						<li><a href="#41">Pesquisar</a></li>
 					</ul>
 				</form>
