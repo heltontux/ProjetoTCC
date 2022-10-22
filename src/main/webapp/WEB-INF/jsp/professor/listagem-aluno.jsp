@@ -1,3 +1,6 @@
+<%@page import="com.helton.tcc.gerenciamento.model.domain.Aluno"%>
+<%@page import="com.helton.tcc.gerenciamento.model.domain.Turma"%>
+<%@page import="com.helton.tcc.gerenciamento.controller.TurmaController"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -38,18 +41,23 @@
       	<th>ID</th>
         <th>Nome</th>
         <th>Email</th>
-        <th></th>
+        <th>Turma</th>
       </tr>
     </thead>
     <tbody>
       <c:forEach var="aluno" items="${alunos}">
-      <tr>
-      	<td>${aluno.ID}</td>
-      	<td>${aluno.nome}</td>
-        <td>${aluno.email}</td>
-        <td>${aluno.turma}</td>
-        <td><a href="/professor/${aluno.ID}/consultar">Detalhar</a></td>
-      </tr>
+	      <tr>
+	      	<td>${aluno.ID}</td>
+	      	<td>${aluno.nome}</td>
+	        <td>${aluno.email}</td>
+	        
+	        <c:forEach var="turma" items="${turmas}">
+	      		<c:if test="${aluno.turma eq turma.idTurma}">
+	        		<td>${turma.descricao}</td>
+	        	</c:if>
+	        </c:forEach>
+	        <td><a href="/professor/${aluno.ID}/consultar">Detalhar</a></td>
+	      </tr>
        </c:forEach>
     </tbody>
   </table>

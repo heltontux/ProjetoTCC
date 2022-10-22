@@ -27,9 +27,11 @@ public class ProfessorController {
 	}
 	
 	@GetMapping(value = "/professor/listagem-aluno")
-	public String obterAlunos(Model model) {
+	public String obterAlunos(Model modelAluno, Model modelTurma) {
 		AlunoController alunoCtrl = new AlunoController();
-		model.addAttribute("alunos", alunoCtrl.obterTodos());
+		TurmaController turmaCtrl = new TurmaController();
+		modelAluno.addAttribute("alunos", alunoCtrl.obterTodos());
+		modelTurma.addAttribute("turmas", turmaCtrl.obterTodos());
 		return "professor/listagem-aluno";
 	}
 	
