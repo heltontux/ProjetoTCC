@@ -121,8 +121,14 @@ public class CoordenadorController {
 		AlunoController alunoCtrl = new AlunoController();
 		Aluno alunoExcluido = new Aluno();
 		alunoExcluido = alunoCtrl.buscaAluno(id);
-		alunoCtrl.removeById(id);
-		model.addAttribute("mensagem", "O(a) aluno(a) " +alunoExcluido.getNome()+ " foi excluido com sucesso!!!");
+		try {
+			alunoCtrl.removeById(id);
+			model.addAttribute("mensagem1", "O(a) aluno(a) " +alunoExcluido.getNome()+ " foi excluido com sucesso!!!");
+		} catch (Exception e) {
+			model.addAttribute("mensagem2", "O(a) aluno(a) "+alunoExcluido.getNome()+ " Não pode ser excluído! Existe restrição no banco de dados." );
+		}
+		//alunoCtrl.removeById(id);
+		//model.addAttribute("mensagem", "O(a) aluno(a) " +alunoExcluido.getNome()+ " foi excluido com sucesso!!!");
 		model.addAttribute("alunos", alunoCtrl.obterTodos());
 		return "coordenador/listagem-aluno";
 
