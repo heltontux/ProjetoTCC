@@ -29,7 +29,13 @@
 				<input type="text" id="cpf" name="cpf"><br>
 				
 				<label for="turma">Turma:</label><br>
-				<input type="number" id="turma" name="turma"><br>
+					<select name="turma">
+						<c:forEach var="turma" items="${turmas}"> 
+							 <option value="${turma.idTurma}">${turma.descricao}</option>						  
+						</c:forEach>
+					</select><br>
+				
+				<!-- <input type="number" id="turma" name="turma"><br>  -->
 
 				<label for="senha">Senha:</label><br>
 				<input type="password" id="senha" name="senha"><br>

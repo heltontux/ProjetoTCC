@@ -22,7 +22,9 @@ public class CoordenadorController {
 	}
 	
 	@GetMapping(value = "/coordenador/cadastrar-aluno")
-	public String cadastrarAluno() {
+	public String cadastrarAluno(Model model) {
+		TurmaController turmaCtrl = new TurmaController();
+		model.addAttribute("turmas", turmaCtrl.obterTodos());
 		return "coordenador/cadastrar-aluno";
 	}
 	
