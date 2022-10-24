@@ -36,20 +36,8 @@
 		<h2>Existem ${alunos.size()} alunos cadastrados</h2>
 		<form action="" method="post">
     		<div class="input-group">
-    		
-    		<!-- 
-    		<select name="sortBy">
-    			<option value="nome">Nome</option>
-    			<option value="email">email</option>
-    		</select> 
-    		
-      		<div class="input-group-btn">
-        	<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-sort-by-alphabet"></i></button>
-	      	</div>
-	    	</div>
-		</form>   -->
 		
-		<table class="table table-striped conteudo-lista-aluno" >
+	<table class="table table-striped conteudo-lista-aluno" >
     <thead>
       <tr>
       	<th>ID</th>
@@ -65,7 +53,14 @@
       	<td>${aluno.ID}</td>
       	<td>${aluno.nome}</td>
         <td>${aluno.email}</td>
-        <td>${aluno.turma}</td>
+        
+         <c:forEach var="turma" items="${turmas}">
+	      	<c:if test="${aluno.turma eq turma.idTurma}">
+	       		<td>${turma.descricao}</td>
+	       	</c:if>
+	     </c:forEach>
+        
+       <!--  <td>${aluno.turma}</td>  -->
         <td><a href="/coordenador/${aluno.ID}/excluir-aluno">Excluir</a></td>
         <td><a href="/coordenador/${aluno.ID}/consultar">Detalhar</a></td>
       </tr>

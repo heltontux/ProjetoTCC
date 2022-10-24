@@ -35,7 +35,7 @@
 		<form action="" method="post">
     		<div class="input-group">
     		
-		<table class="table table-striped conteudo-lista-aluno" >
+	<table class="table table-striped conteudo-lista-aluno" >
     <thead>
       <tr>
       	<th>ID</th>

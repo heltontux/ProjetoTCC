@@ -87,9 +87,11 @@ public class CoordenadorController {
 	}
 	
 	@GetMapping(value = "/coordenador/listagem-aluno")
-	public String listagemAluno(Model model) {
+	public String listagemAluno(Model modelAluno, Model modelTurma) {
 		AlunoController alunoCtrl = new AlunoController();
-		model.addAttribute("alunos", alunoCtrl.obterTodos());
+		TurmaController turmaCtrl = new TurmaController();
+		modelAluno.addAttribute("alunos", alunoCtrl.obterTodos());
+		modelTurma.addAttribute("turmas", turmaCtrl.obterTodos());
 		return "coordenador/listagem-aluno";
 	}
 	
