@@ -51,7 +51,7 @@ public class CoordenadorController {
 	public String actionCadastrarAluno(Model model, Aluno aluno) {
 		AlunoController alunoCtrl = new AlunoController();
 		alunoCtrl.salvar(aluno);
-		model.addAttribute("mensagem", "O(a) aluno(a) "+aluno.getNome()+" foi cadastrado com sucesso!!!");
+		model.addAttribute("mensagem1", "O(a) aluno(a) "+aluno.getNome()+" foi cadastrado com sucesso!!!");
 		model.addAttribute("alunos", alunoCtrl.obterTodos());
 		return "coordenador/listagem-aluno";
 	}
@@ -60,7 +60,7 @@ public class CoordenadorController {
 	public String actionCadastrarCurso(Model model, Curso curso) {
 		CursoController cursoCtrl = new CursoController();
 		cursoCtrl.salvar(curso);
-		model.addAttribute("mensagem", "O curso foi cadastrado com sucesso!!!");
+		model.addAttribute("mensagem1", "O curso foi cadastrado com sucesso!!!");
 		model.addAttribute("cursos", cursoCtrl.obterTodos());
 		return "coordenador/listagem-curso";
 	}
@@ -69,7 +69,7 @@ public class CoordenadorController {
 	public String actionCadastrarTurma(Model model, Turma turma) {
 		TurmaController turmaCtrl = new TurmaController();
 		turmaCtrl.salvar(turma);
-		model.addAttribute("mensagem", "A turma "+turma.getDescricao()+" foi cadastrada com sucesso!!!");
+		model.addAttribute("mensagem1", "A turma "+turma.getDescricao()+" foi cadastrada com sucesso!!!");
 		model.addAttribute("turmas", turmaCtrl.obterTodos());
 		return "coordenador/listagem-turma";
 	}
@@ -78,7 +78,7 @@ public class CoordenadorController {
 	public String actionCadastrarProfessor(Model model, Professor professor) {
 		ProfessorController professorCtrl = new ProfessorController();
 		professorCtrl.salvar(professor);
-		model.addAttribute("mensagem", "O(a) professor(a) "+professor.getNome()+" foi cadastrado com sucesso!!!");
+		model.addAttribute("mensagem1", "O(a) professor(a) "+professor.getNome()+" foi cadastrado com sucesso!!!");
 		model.addAttribute("professores", professorCtrl.obterTodos());
 		return "coordenador/listagem-professor";
 	}
@@ -119,7 +119,7 @@ public class CoordenadorController {
 	}
 
 	@GetMapping(value = "/coordenador/{id}/excluir-aluno")
-	public String excluir(Model model, @PathVariable int id) {
+	public String excluirAluno(Model model, @PathVariable int id) {
 		AlunoController alunoCtrl = new AlunoController();
 		Aluno alunoExcluido = new Aluno();
 		alunoExcluido = alunoCtrl.buscaAluno(id);
@@ -129,10 +129,22 @@ public class CoordenadorController {
 		} catch (Exception e) {
 			model.addAttribute("mensagem2", "O(a) aluno(a) "+alunoExcluido.getNome()+ " Não pode ser excluído! Existe restrição no banco de dados." );
 		}
-		//alunoCtrl.removeById(id);
-		//model.addAttribute("mensagem", "O(a) aluno(a) " +alunoExcluido.getNome()+ " foi excluido com sucesso!!!");
 		model.addAttribute("alunos", alunoCtrl.obterTodos());
 		return "coordenador/listagem-aluno";
-
+	}
+	
+	@GetMapping(value = "/coordenador/{id}/excluir-turma")
+	public String excluirTurma(Model model, @PathVariable int id) {
+		TurmaController turmaCtrl = new TurmaController();
+		Turma turmaExcluida = new Turma();
+		turmaExcluida = turmaCtrl.buscaTurma(id);
+		try {
+			turmaCtrl.removeById(id);
+			model.addAttribute("mensagem1", "Turma " +turmaExcluida.getDescricao()+ " excluida com sucesso!!");
+		} catch (Exception e) {
+			model.addAttribute("mensagem2", "A turma não pode ser excluida! Verifique as restrições do banco de dados.");
+		}
+		model.addAttribute("turmas", turmaCtrl.obterTodos());
+		return "coordenador/listagem-turma";
 	}
 }

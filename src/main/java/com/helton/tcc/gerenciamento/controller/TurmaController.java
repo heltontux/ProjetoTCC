@@ -81,7 +81,8 @@ public class TurmaController {
 
 	public void removeById(int idTurma){ 
         
-        String sql= "DELETE FROM turmas WHERE id = ?";
+		String sql1 = "DELETE FROM turma_curso WHERE turma_id = ?";
+        String sql2= "DELETE FROM turmas WHERE idTurma = ?";
         Connection conn = null;
         PreparedStatement stmt = null;
         
@@ -89,12 +90,17 @@ public class TurmaController {
             //Criação da conexão com o banco de dados
             conn = ConnectionFactory.getConnection();
             
-            //Preparando a query
-            stmt = conn.prepareStatement(sql);
-            
+            //Preparando a query para deletar tabela turma_curso se houver
+            stmt = conn.prepareStatement(sql1); 
             //Setando os valores
-            stmt.setInt(1, idTurma);
+            stmt.setInt(1, idTurma); 
+            //Executando a query
+            stmt.execute();
             
+            //Preparando a query para deletar tabela turma
+            stmt = conn.prepareStatement(sql2); 
+            //Setando os valores
+            stmt.setInt(1, idTurma); 
             //Executando a query
             stmt.execute();
             
