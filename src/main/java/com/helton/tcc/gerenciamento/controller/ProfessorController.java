@@ -36,12 +36,13 @@ public class ProfessorController {
 	}
 	
 	@GetMapping(value = "/professor/listagem-curso")
-	public String obterCursos(Model model) {
+	public String listagemCurso(Model modelCurso, Model modelProfessor) {
 		CursoController cursoCtrl = new CursoController();
-		model.addAttribute("cursos", cursoCtrl.obterTodos());
+		ProfessorController professorCtrl = new ProfessorController();
+		modelProfessor.addAttribute("professores", professorCtrl.obterTodos());
+		modelCurso.addAttribute("cursos", cursoCtrl.obterTodos());
 		return "professor/listagem-curso";
 	}
-	
 	
 	@GetMapping(value = "/professor/cadastrar-conteudo")
 	public String cadastraConteudo(Model modelCurso) {

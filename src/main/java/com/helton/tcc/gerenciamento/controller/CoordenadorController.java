@@ -98,9 +98,11 @@ public class CoordenadorController {
 	}
 	
 	@GetMapping(value = "/coordenador/listagem-curso")
-	public String listagemCurso(Model model) {
+	public String listagemCurso(Model modelCurso, Model modelProfessor) {
 		CursoController cursoCtrl = new CursoController();
-		model.addAttribute("cursos", cursoCtrl.obterTodos());
+		ProfessorController professorCtrl = new ProfessorController();
+		modelProfessor.addAttribute("professores", professorCtrl.obterTodos());
+		modelCurso.addAttribute("cursos", cursoCtrl.obterTodos());
 		return "coordenador/listagem-curso";
 	}
 	

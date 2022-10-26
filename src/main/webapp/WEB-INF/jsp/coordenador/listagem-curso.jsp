@@ -52,7 +52,13 @@
       <tr>
       	<td>${curso.idCurso}</td>
       	<td>${curso.descricao}</td>
-      	<td>${curso.professor_id}</td>
+      	
+      	<c:forEach var="professor" items="${professores}">
+      		<c:if test="${curso.professor_id eq professor.idProfessor}">
+      			<td>${professor.nome}</td>
+      		</c:if>
+      	</c:forEach>
+      	   	
       	<td>${curso.duracao} horas</td>
         <td><a href="/professor/${curso.idCurso}/exibir-conteudo">Conteúdo</a></td>
       </tr>
