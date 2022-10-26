@@ -119,6 +119,17 @@ public class CoordenadorController {
 		model.addAttribute("turmas", turmaCtrl.obterTodos());
 		return "coordenador/listagem-turma";
 	}
+	
+	@GetMapping(value = "/coordenador/{id}/exibir-conteudo")
+	public String exibirConteudo(Model modelCurso, Model modelConteudo, @PathVariable int id) {
+		CursoController cursoCtrl = new CursoController();
+		Curso cursoSelecionado = new Curso();
+		cursoSelecionado = cursoCtrl.buscaCurso(id);
+		modelCurso.addAttribute("mensagem", "Curso: " +cursoSelecionado.getDescricao());
+		ConteudoController conteudoCtrl = new ConteudoController();
+		modelCurso.addAttribute("conteudos", conteudoCtrl.buscaConteudoCurso(id));
+		return "coordenador/curso-selecionado";
+	}
 
 	@GetMapping(value = "/coordenador/{id}/excluir-aluno")
 	public String excluirAluno(Model model, @PathVariable int id) {

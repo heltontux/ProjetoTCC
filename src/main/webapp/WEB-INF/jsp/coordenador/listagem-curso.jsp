@@ -60,7 +60,7 @@
       	</c:forEach>
       	   	
       	<td>${curso.duracao} horas</td>
-        <td><a href="/professor/${curso.idCurso}/exibir-conteudo">Conteúdo</a></td>
+        <td><a href="/coordenador/${curso.idCurso}/exibir-conteudo">Detalhes</a></td>
       </tr>
        </c:forEach>
     </tbody>
