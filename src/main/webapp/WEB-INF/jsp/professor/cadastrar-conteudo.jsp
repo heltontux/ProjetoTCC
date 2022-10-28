@@ -19,14 +19,13 @@
 			<h2>Cadastro de Conteúdo</h2>
 			
 			<form method="post" action="/professor/actionCadastrarConteudo">
-				<label for="curso_id">Curso:</label><br>
-				
-				<select name="curso_id">
-						<c:forEach var="curso" items="${cursos}">
-							<option value="${curso.idCurso}">${curso.descricao}</option>
-						</c:forEach>
-				</select><br>
-				<!-- <input type="text" id="idCurso" name="idCurso"><br>  -->
+				<label for="IDcurso">Curso:</label><br>	
+					<select name="idCurso">
+					<!-- Obs: a variavel "name" tem q ser igual a variavel do objeto conteudo -->
+							<c:forEach var="curso" items="${cursos}">
+								<option value="${curso.idCurso}">${curso.descricao}</option>
+							</c:forEach>
+					</select><br>
 
 				<label for="topico">Tópico:</label><br>
 				<input type="text" id="topico" name="topico"><br>

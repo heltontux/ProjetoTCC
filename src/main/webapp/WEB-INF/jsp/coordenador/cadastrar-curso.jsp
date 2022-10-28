@@ -22,7 +22,7 @@
 				<label for="descricao">Descrição:</label><br>
 				<input type="text" id="descricao" name="descricao"><br>
 
-				<label for="professor_id">Professor:</label><br>
+				<label for="professor_id-teste">Professor:</label><br>
 					<select name="professor_id">
 						<c:forEach var="professor" items="${professores}"> 
 						  <option value="${professor.idProfessor}">${professor.nome}</option>						  

@@ -22,12 +22,19 @@
 	
 			<div class="homework">
 		
-	<c:if test="${not empty mensagem}">
-		<div class="alert alert-success alert-dismissible">
-    		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    		<strong>Sucesso!</strong> ${mensagem}
-  		</div>
-	</c:if>
+		<c:if test="${not empty mensagem1}">
+			<div class="alert alert-success alert-dismissible">
+	    		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	    		<strong>Sucesso!</strong> ${mensagem1}
+	  		</div>
+		</c:if>
+		
+		<c:if test="${not empty mensagem2}">
+			<div class="alert alert-success alert-dismissible">
+	    		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	    		<strong>Erro!</strong> ${mensagem2}
+	  		</div>
+		</c:if>
 	
 	<h3><a href="inicio">Voltar</a></h3>
 	

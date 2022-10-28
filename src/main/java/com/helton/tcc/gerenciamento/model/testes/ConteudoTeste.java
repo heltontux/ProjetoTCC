@@ -16,23 +16,23 @@ public class ConteudoTeste {
 		
 		//c.setIdConteudo(9);
 		/*
-		c.setIdCurso(4);
-		c.setTopico("Teste 12");
-		c.setDetalhes("Aula experimental de teste 12");
+		c.setIdCurso(1);
+		c.setTopico("Teste conteudo");
+		c.setDetalhes("Aula experimental teste");
 		c.setDia("10/10/2010");
 		c.setHora("15:36");
 		*/
 		//System.out.println(c);
 	
-		c.setTopico("Teste 16:00");		
+		//c.setTopico("Teste 16:00");		
 		
-		conteudoCtrl.salvar(c);
+		//conteudoCtrl.salvar(c);
 		
 		//conteudoCtrl.atualizar(c);
 		
 		//conteudoCtrl.removeById(9);
 		
-		Conteudo cont = conteudoCtrl.buscaConteudo(14);
+		Conteudo cont = conteudoCtrl.buscaConteudo(31);
 		System.out.println(cont);
 		
 		/* //Inicio exibir conteudo ...

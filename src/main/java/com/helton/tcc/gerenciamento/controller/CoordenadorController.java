@@ -51,17 +51,26 @@ public class CoordenadorController {
 	public String actionCadastrarAluno(Model model, Aluno aluno) {
 		AlunoController alunoCtrl = new AlunoController();
 		alunoCtrl.salvar(aluno);
+		TurmaController turmaCtrl = new TurmaController();
 		model.addAttribute("mensagem1", "O(a) aluno(a) "+aluno.getNome()+" foi cadastrado com sucesso!!!");
 		model.addAttribute("alunos", alunoCtrl.obterTodos());
-		return "coordenador/listagem-aluno";
+		model.addAttribute("turmas", turmaCtrl.obterTodos());
+		return "/coordenador/listagem-aluno";
 	}
 	
 	@PostMapping(value = "/coordenador/actionCadastrarCurso")
 	public String actionCadastrarCurso(Model model, Curso curso) {
 		CursoController cursoCtrl = new CursoController();
+		
+		//==========TESTE=============
+		System.out.println(curso);
+		//============================
+		
 		cursoCtrl.salvar(curso);
+		ProfessorController professorCtrl = new ProfessorController();
 		model.addAttribute("mensagem1", "O curso foi cadastrado com sucesso!!!");
 		model.addAttribute("cursos", cursoCtrl.obterTodos());
+		model.addAttribute("professores", professorCtrl.obterTodos());
 		return "coordenador/listagem-curso";
 	}
 	

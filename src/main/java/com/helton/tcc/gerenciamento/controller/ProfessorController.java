@@ -45,31 +45,38 @@ public class ProfessorController {
 	}
 	
 	@GetMapping(value = "/professor/cadastrar-conteudo")
-	public String cadastraConteudo(Model modelCurso) {
+	public String cadastraConteudo(Model model) {
 		CursoController cursoCtrl = new CursoController();
-		modelCurso.addAttribute("cursos", cursoCtrl.obterTodos());
+		model.addAttribute("cursos", cursoCtrl.obterTodos());
 		return "professor/cadastrar-conteudo";
 	}
 	
 	@GetMapping(value = "/professor/{id}/exibir-conteudo")
-	public String exibirConteudo(Model modelCurso, Model modelConteudo, @PathVariable int id) {
+	public String exibirConteudo(Model model, @PathVariable int id) {
 		CursoController cursoCtrl = new CursoController();
 		Curso cursoSelecionado = new Curso();
 		cursoSelecionado = cursoCtrl.buscaCurso(id);
-		modelCurso.addAttribute("mensagem", "Curso: " +cursoSelecionado.getDescricao());
+		model.addAttribute("mensagem", "Curso: " +cursoSelecionado.getDescricao());
 		ConteudoController conteudoCtrl = new ConteudoController();
-		modelCurso.addAttribute("conteudos", conteudoCtrl.buscaConteudoCurso(id));
+		model.addAttribute("conteudos", conteudoCtrl.buscaConteudoCurso(id));
 		return "professor/curso-selecionado";
 	}
 	
 	@PostMapping(value = "/professor/actionCadastrarConteudo")
 	public String actionCadastrarConteudo(Model model, Conteudo conteudo) {
-		ConteudoController conteudoCtrl = new ConteudoController();
-		conteudoCtrl.salvar(conteudo);
 		
-		int idConteudo = conteudo.getIdConteudo();
-		model.addAttribute("mensagem", "Conteúdo cadastrado com sucesso!!! ID="+idConteudo);
-		//model.addAttribute("cursos", cursoCtrl.obterTodos());
+		ConteudoController conteudoCtrl = new ConteudoController();
+		try {
+			conteudoCtrl.salvar(conteudo);
+			model.addAttribute("mensagem1", "Conteúdo cadastrado com sucesso!!!");
+		} catch (Exception e) {
+			model.addAttribute("mensagem2", "Verifique as restrições no banco de dados!!");
+		}
+		CursoController cursoCtrl = new CursoController();
+		ProfessorController professorCtrl =  new ProfessorController();
+		
+		model.addAttribute("cursos", cursoCtrl.obterTodos());
+		model.addAttribute("professores", professorCtrl.obterTodos());
 		return "professor/listagem-curso";
 	}
 	

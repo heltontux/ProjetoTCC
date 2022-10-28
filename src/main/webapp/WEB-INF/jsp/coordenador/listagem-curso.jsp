@@ -22,10 +22,10 @@
 	
 			<div class="homework">
 		
-	<c:if test="${not empty mensagem}">
+	<c:if test="${not empty mensagem1}">
 		<div class="alert alert-success alert-dismissible">
     		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    		<strong>Sucesso!</strong> ${mensagem}
+    		<strong>Sucesso!</strong> ${mensagem1}
   		</div>
 	</c:if>
 	
